@@ -1,10 +1,6 @@
-import { CacheModule, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Db } from 'typeorm';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { UrlEntity } from './urls/entities/url.entity';
 import { UrlsModule } from './urls/urls.module';
 
 @Module({
@@ -18,13 +14,9 @@ import { UrlsModule } from './urls/urls.module';
       host: process.env.DB_HOST,
       port: Number(process.env.DB_PORT),
       synchronize: true,
-      entities: [__dirname + '/**/*.entity{.js, .ts}']
+      entities: [__dirname + '/**/*.entity{.js, .ts}'],
     }),
-    CacheModule.register(),
-    TypeOrmModule.forFeature([UrlEntity]),
     UrlsModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

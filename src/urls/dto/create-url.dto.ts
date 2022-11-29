@@ -1,8 +1,7 @@
-import { IsEmpty, IsNotEmpty, IsOptional, IsString, IsUrl } from "class-validator";
-import { IsNull } from "typeorm";
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class CreateUrlDto {
-    @IsNotEmpty()
-    @IsString()
-    longUrl: string;
+  @IsNotEmpty()
+  @IsString()
+  longUrl: string;
 }

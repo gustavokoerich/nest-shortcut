@@ -1,28 +1,28 @@
-import { UrlDto } from "./dto/url.dto"
+import { UrlDto } from './dto/url.dto';
 
 export class UrlBuilder {
-    private dto: UrlDto;
+  private dto: UrlDto;
 
-    aUrl(): UrlBuilder {
-        return new UrlBuilder();
-    }
+  aUrl(): UrlBuilder {
+    return new UrlBuilder();
+  }
 
-    withUrlCode(urlCode: string): UrlBuilder {
-        this.dto.urlCode = urlCode;
-        return this;
-    }
+  withUrlCode(urlCode: string): UrlBuilder {
+    this.dto.urlCode = urlCode;
+    return this;
+  }
 
-    withLongUrl(longUrl: string): UrlBuilder {
-        this.dto.longUrl = longUrl;
-        return this;
-    }
+  withLongUrl(longUrl: string): UrlBuilder {
+    this.dto.longUrl = longUrl;
+    return this;
+  }
 
-    withShortUrl(shortUrl: string): UrlBuilder {
-        this.dto.shortUrl = shortUrl;
-        return this;
-    }
+  withShortUrl(shortUrl: string): UrlBuilder {
+    this.dto.shortUrl = shortUrl;
+    return this;
+  }
 
-    build(): UrlDto {
-        return this.dto;
-    }
+  build(): UrlDto {
+    return this.dto;
+  }
 }
