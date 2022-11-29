@@ -1,22 +1,28 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
-@Entity({name: 'urls'})
-export class UrlEntity {
-    @PrimaryGeneratedColumn('uuid')
-    id: string;
+@Entity()
+export class Url {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
-    @Column({name: 'url_code'})
-    urlCode: string;
+  @Column()
+  urlCode: string;
 
-    @Column({name: 'long_url'})
-    longUrl: string;
-    
-    @Column({name: 'short_url'})
-    shortUrl: string;
+  @Column()
+  longUrl: string;
 
-    @CreateDateColumn({name: 'created_at'})
-    createdAt: string;
+  @Column()
+  shortUrl: string;
 
-    @UpdateDateColumn({name: 'updated_at'})
-    updated_at: string;
+  @CreateDateColumn()
+  createdAt: string;
+
+  @UpdateDateColumn()
+  updatedAt: string;
 }

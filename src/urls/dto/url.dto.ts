@@ -1,7 +1,7 @@
 export class UrlDto {
-    urlCode: string;
+  urlCode: string;
 
-    longUrl: string;
+  longUrl: string;
 
-    shortUrl: string;
+  shortUrl: string;
 }
